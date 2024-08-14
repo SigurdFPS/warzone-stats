@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warzone Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="profile">
+        <h1>Warzone Profile</h1>
+        
+        <!-- Form to select platform and enter username -->
+        <form id="player-form">
+            <label for="platform">Select Platform:</label>
+            <select id="platform" name="platform">
+                <option value="psn">PlayStation</option>
+                <option value="xbl">Xbox</option>
+                <option value="battle">Battle.net</option>
+                <option value="uno">Activision ID</option>
+            </select>
+
+            <label for="username">Enter Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <button type="submit">Get Profile</button>
+        </form>
+
+        <div id="player-info" style="display:none;">
+            <p>Activision ID: <span id="activision-id"></span></p>
+            <p>K/D Ratio: <span id="kd-ratio"></span></p>
+            <p>Wins: <span id="wins"></span></p>
+            <p>Win Streak: <span id="win-streak"></span></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
